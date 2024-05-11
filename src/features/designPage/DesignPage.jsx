@@ -156,7 +156,7 @@ const DroppableArea = ({userId}) => {
           return '';
       }
     }).join('');
-  
+    // TODO - Extract to function
      // Create a Blob from the HTML String
     const blob = new Blob([htmlContent], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
