@@ -1,0 +1,25 @@
+.btn{
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 4px;
+
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 
+}
+.send{
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); 
+}
+    

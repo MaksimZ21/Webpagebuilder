@@ -1,0 +1,27 @@
+
+.aside-menu {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    height: 70vh; /* Full-height to fit the entire viewport */
+    padding: 10px;
+}
+
+.menu-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.submenu {
+    background-color: #f1f1f1;
+}
+.dropped-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust space between items */
+  }
+  
+  .dropped-item {
+    flex: 1 1 30%; /* Each item will take up about one-third of the row, adjust for margins */
+  }
