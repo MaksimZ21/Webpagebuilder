@@ -1,6 +1,7 @@
 import React from 'react'
 import './button.css'
 import { Link, useNavigate } from 'react-router-dom';
+import Snackbar from '@mui/material/Snackbar';
 const Button = ({type, className ,text, destination}) => {
   const navigate = useNavigate();
   const handleButtonClick = () => {

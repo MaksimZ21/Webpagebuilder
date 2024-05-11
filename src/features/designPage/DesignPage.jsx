@@ -58,14 +58,10 @@ const DraggableItem = ({ item , setModalOpen}) => {
   }));
   const handleDragStart = () => {
     if (item.type === 'img') {
-      setModalOpen(true); // This function will be used to set modal open state in parent component
+      setModalOpen(true); 
     }
   };
   return (
-    //<div ref={drag} style={{ opacity: isDragging ? 0.5 : 1, cursor: 'grab' }}>
-      //{item.text}
-    //</div>  
-
     <aside className='asdItms' ref={drag} style={{ opacity: isDragging ? 0.5 : 1, cursor: 'grab' }} onMouseDown={handleDragStart}>
       {item.text}
     </aside>
@@ -90,8 +86,8 @@ const DroppableArea = ({userId}) => {
   }));
 
     useEffect(() => {
-    console.log(droppedItems);// This will log the updated state after changes
-  }, [droppedItems]); // Dependency array tells React to rerun the effect when `droppedItems` changes
+    console.log(droppedItems);
+  }, [droppedItems]); 
 
 
   const isActive = canDrop && isOver;
@@ -100,9 +96,9 @@ const DroppableArea = ({userId}) => {
     axios.get(`http://localhost:3001/pages/loadpages`, {userId})
       .then(response => {
         setPages(response.data.data);
-        setDroppedItems(response.data.data); // Set the fetched pages into state
+        setDroppedItems(response.data.data);
         console.log(response.data.data);
-        setShowPagesPopup(true); // Show the popup
+        setShowPagesPopup(true);
       })
       .catch(error => {
         console.error("Error loading pages:", error);
@@ -114,12 +110,10 @@ const DroppableArea = ({userId}) => {
   const handleSave = (e, userId, droppedItems) => {
     e.preventDefault()
     console.log(userId, droppedItems);
-    
     const elementsToSend = droppedItems.map(item => ({
       id: item.id,
-      elementType: item.elementType // Or 'elementType', depending on which property you want to use
+      elementType: item.elementType 
     }));
-    
     axios.post('http://localhost:3001/pages/savepage', {userId, elements: elementsToSend})
     .then(result => {
       console.log(result)
@@ -158,6 +152,7 @@ const DroppableArea = ({userId}) => {
     }).join('');
     // TODO - Extract to function
      // Create a Blob from the HTML String
+     
     const blob = new Blob([htmlContent], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
 
@@ -267,7 +262,6 @@ const AsideMenu = ({ setModalOpen }) => {
 const DesignPage = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedImageUrl, setSelectedImageUrl] = useState('');
-
 
 
   const handleImageSelect = (url) => {
