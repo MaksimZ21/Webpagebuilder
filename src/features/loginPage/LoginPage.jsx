@@ -37,7 +37,7 @@ const LoginPage = () => {
   return (
     <div className='mainPage'>
       <form className='loginWin' onSubmit={handleSubmit}>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <div className='textBoxes-Login'>
           <div className='text'>
             <TextBox inputType={"email"}  claName={"textBox-chatInput"} placeHol={"Enter Email here"} onInputChange={handleInputTextChange}/>
