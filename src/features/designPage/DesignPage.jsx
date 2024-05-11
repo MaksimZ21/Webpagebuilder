@@ -22,7 +22,6 @@ const elements = [
   { id: '5', type: 'parag', text: 'Paragraph'},
   { id: '6', type: 'table', text: 'Table'},
   { id: '7', type: 'divForItem', text: 'Div'}
-
 ];
 
 
