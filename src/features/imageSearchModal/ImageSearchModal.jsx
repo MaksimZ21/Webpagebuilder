@@ -1,35 +1,24 @@
-import React, { useState } from 'react';
-import axios from 'axios'; // Make sure to install axios for API requests
+import React from 'react';
+import './imageSearchModal.css';
 
 const ImageSearchModal = ({ isOpen, onClose, onImageSelect }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [images, setImages] = useState([]);
-
-  const fetchImages = async () => {
-    try {
-      const response = await axios.get(`https://api.unsplash.com/search/photos`, {
-        params: { query: searchTerm, per_page: 12 },
-        headers: {
-          Authorization: `T33KwTdO9y6fBtc9qa06tprdWG9ocyz8Zgw--F7VBtA`
-        }
-      });
-      setImages(response.data.results);
-    } catch (error) {
-      console.error('Error fetching images from Unsplash', error);
-    }
+  const handleUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      onImageSelect(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
 
   return (
-    <div style={{ display: isOpen ? 'block' : 'none', position: 'fixed', top: '20%', left: '30%', backgroundColor: 'white', padding: '20px', zIndex: 1000 }}>
+    <div className={`image-search-modal ${isOpen ? 'open' : ''}`}>
       <button onClick={onClose}>Close</button>
-      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search images" />
-      <button onClick={fetchImages}>Search</button>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
-        {images.map((img) => (
-          <img key={img.id} src={img.urls.small} alt={img.alt_description} style={{ width: '100px', height: '100px', margin: '10px' }} onClick={() => onImageSelect(img.urls.regular)} />
-        ))}
+      <div>
+        <input type="file" accept="image/*" onChange={handleUpload} />
       </div>
     </div>
   );
 };
-export default ImageSearchModal
+
+export default ImageSearchModal;

@@ -5,16 +5,18 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 .mainNav{
     margin-top: 10px;
     background-color: transparent;
     padding: 15px;
+    
 }
 .navLink{
     margin: 30px;
     text-decoration: none;
-    color: white
+    color: black
 }
 img{
     width: 100px;

@@ -1,0 +1,14 @@
+.image-search-modal {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .image-search-modal.open {
+    display: block;
+  }
+  

@@ -1,0 +1,83 @@
+/* asidemenu.css */
+.aside-menu {
+    width: 4vw;
+    background: #f4f4f4;
+    padding: 10px 0;
+    border-right: 1px solid #ccc;
+    position: fixed; /* Make the sidebar fixed */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the menu items */
+  }
+  
+  .menu-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the icons */
+  }
+  
+  .submenu {
+    position: absolute;
+    top: 0;
+    left: 4vw; /* Open the submenu to the side of the sidebar */
+    width: 200px; /* Adjust the width as needed */
+    background: #f4f4f4;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .asdItms {
+    margin: 5px 0;
+  }
+  
+  .dropped-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrolling if needed */
+    height: calc(100vh - 80px); /* Adjust height considering the buttons' height */
+    padding: 10px;
+  }
+  
+  .dropped-item, .nested-item {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid grey;
+    cursor: move;
+  }
+  
+  .nested-item {
+    background: #e8e8e8;
+  }
+  
+  .style-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+  }
+  
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dialog-content label {
+    margin-bottom: 10px;
+  }
+  
+  .dialog-content input[type="color"] {
+    margin-left: 10px;
+  }
+  

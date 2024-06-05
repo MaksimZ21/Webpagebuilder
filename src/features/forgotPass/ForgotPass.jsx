@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './signuppage.css'
+import './forgotpass.css'
 import TextBox from '../textBox/TextBox';
 import Button from '../button/Button';
 import axios from 'axios'
@@ -11,8 +11,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import Navbar from '../navbar/Navbar';
 import ErrorIcon from '@mui/icons-material/Error';
 
-const Signuppage = () => {
-  const [username, setUsername] = useState('');
+const ForgotPass = () => {
   const [pass, setPass] = useState('');
   const [email, setEmail] = useState('');
   const [conPass, setConPass] = useState('');
@@ -21,9 +20,6 @@ const Signuppage = () => {
 
   const navigate = useNavigate()
   
-  const handleInputTextChange = (e) => {
-    setUsername(e.target.value);
-  }
   const handleInputPassChange = (e)=> {
     setPass(e.target.value);
   }
@@ -37,9 +33,9 @@ const Signuppage = () => {
     if(conPass == pass)
     {
       e.preventDefault()
-      axios.post('http://localhost:3001/users/signup', {username, pass, email})
+      axios.post('http://localhost:3001/users/changepass', {email, pass})
       .then(result => {console.log(result)
-      if(result.status == 201){
+      if(result.status == 200){
         setShowAlert(true); 
         setTimeout(() => {
           setShowAlert(false);
@@ -62,29 +58,24 @@ const Signuppage = () => {
   return (
     <div className='mainPage'>
       <Navbar/>
-      <form className='signUp' onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
-        <div className='textBoxes-signUp'>
+      <form className='changePass' onSubmit={handleSubmit}>
+        <h1>Change Pass</h1>
+        <div className='textBoxes-changePass'>
           <div className='text'>
-            <TextBox inputType={"text"}  claName={"textBox-chatInput"} placeHol={"Enter Username here"} onInputChange={handleInputTextChange}/>
-            <FaUser className='icon'/>
-          </div>
-          
-          <div className='text'>
-            <TextBox inputType={"email"} claName={"textBox-chatInput"} placeHol={"Enter Email here"} onInputChange={handleInputEmailChange}/>
+            <TextBox inputType={"email"}  claName={"textBox-chatInput"} placeHol={"Enter email here"} onInputChange={handleInputEmailChange}/>
             <MdEmail className='icon'/>
           </div>
           <div className='text'>
-            <TextBox inputType={"password"} claName={"textBox-chatInput"} placeHol={"Enter Password here"} onInputChange={handleInputPassChange}/>
+            <TextBox inputType={"password"} claName={"textBox-chatInput"} placeHol={"Enter New pass here"} onInputChange={handleInputPassChange}/>
             <FaLock className='icon'/>
           </div>
           <div className='text'>
-            <TextBox inputType={"password"} claName={"textBox-chatInput"} placeHol={"Confirm password"} onInputChange={handleInputPassConfirmationChange}/>
+            <TextBox inputType={"password"} claName={"textBox-chatInput"} placeHol={"Confirm New Pass"} onInputChange={handleInputPassConfirmationChange}/>
             <FaLock className='icon'/>
           </div>
         </div>
         <div className='buttons'> 
-          <Button type="submit" className='btn' text={'Sign up!'} />
+          <Button type="submit" className='btn' text={'Change Pass!'} />
         </div>
     </form>
     {showAlert && (
@@ -101,7 +92,7 @@ const Signuppage = () => {
               zIndex: 1000
             }}
           >
-            Signed Up Successfully!
+            Password Changed!
           </Alert>
         )}
     {showErrorAlert && (
@@ -118,7 +109,7 @@ const Signuppage = () => {
             zIndex: 1000
           }}
         >
-          Passwords doesn't match!
+          Password didnt change!!
         </Alert>
       )}
     </div>
@@ -126,4 +117,4 @@ const Signuppage = () => {
   )
 }
 
-export default Signuppage
+export default ForgotPass

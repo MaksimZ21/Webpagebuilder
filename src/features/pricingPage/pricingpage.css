@@ -1,0 +1,82 @@
+/* pricingPage.css */
+
+  
+  .pricing-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #333;
+     /* Set the same background color as the rest of the page */
+    min-height: 100vh; /* Ensure the container takes up the full viewport height */
+  }
+  
+  .pricing-container h1 {
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  .pricing-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .pricing-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .pricing-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px;
+    width: 100%;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .pricing-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .pricing-card h2 {
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .pricing-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pricing-card ul li {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .pricing-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pricing-card button:hover {
+    background-color: #0056b3;
+  }
+  

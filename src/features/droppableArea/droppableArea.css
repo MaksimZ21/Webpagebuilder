@@ -1,0 +1,33 @@
+.droppable-area-container {
+  display: flex;
+  height: 100vh;
+}
+
+.droppable-area {
+  background-color: lightgrey;
+  padding: 10px;
+  margin-left: 4vw;
+  width: 96vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.droppable-area.active {
+  background-color: lightgreen;
+}
+
+.dropped-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.success-alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  z-index: 1000;
+}

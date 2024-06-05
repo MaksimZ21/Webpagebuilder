@@ -1,0 +1,50 @@
+.about-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #333; /* Text color */
+    background-color: #f9f9f9; /* Background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Ensure the content can scroll vertically if needed */
+
+  }
+  
+  .about-container h1 {
+    color: #222; /* Header color */
+    margin-bottom: 20px;
+  }
+  
+  .about-content {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .about-content p {
+    line-height: 1.6;
+  }
+  
+  .about-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .about-content ul li {
+    margin-bottom: 10px;
+    font-weight: bold; /* Make the list items bold */
+  }
+  
+  .about-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .about-images img {
+    max-width: 30%; /* Adjust width as needed */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

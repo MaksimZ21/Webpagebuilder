@@ -1,0 +1,14 @@
+.load-pages-container {
+    padding: 20px;
+  }
+  
+  .pages-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .page-card {
+    width: 300px;
+  }
+  

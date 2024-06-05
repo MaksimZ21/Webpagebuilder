@@ -1,13 +1,12 @@
 h1{
-    color: white;
+    color: black;
 }
 .mainPage{
-    flex-grow: 2;
     width: 100vw;
-    height: inherit;
     display: flex;
     justify-content:  center;
     align-items: center;
+    flex-direction: column;
 }
 .loginWin{
     width: 35vw;
@@ -18,22 +17,23 @@ h1{
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4); 
     backdrop-filter: blur(30px);
     border: 2px solid rgba(255,255,255,.2);
- 
+    margin-top: 60px;
+    color: black;
 }
 .textBoxes-Login{
     display: flex;
     flex-direction: column;
+    color: black;
+    margin-top: 50px;
 }
 .underText{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    color: white;
+    color: black;
     font-size: 14px;
 }
-h5{
-    font-weight: normal;
-    font-size: 14px;
-}
+
+
   
